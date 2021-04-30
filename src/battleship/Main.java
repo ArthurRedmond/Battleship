@@ -1,5 +1,9 @@
 package battleship;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -14,6 +18,7 @@ public class Main {
             }
         }
         printGame(gameplay);
+        placeAircraftCarrier(gameplay);
     }
 
 
@@ -31,4 +36,31 @@ public class Main {
             index++;
         }
     }
+
+    public static void placeAircraftCarrier(char[][] gameplay) {
+        Scanner scanner = new Scanner(System.in);
+        char[] aircraftCarrier = new char[5];
+        char firstPostionRow;
+        char firstPostionColumn;
+        char lastPostionRow;
+        char lastPostionColumn;
+
+        System.out.println("\nEnter the coordinates of the Aircraft Carrier (5 cells):");
+        String input = scanner.nextLine();
+        char[] inputArray = input.toCharArray();
+
+        firstPostionRow = inputArray[0];
+        firstPostionColumn = inputArray[1];
+        lastPostionRow = inputArray[3];
+        lastPostionColumn = inputArray[4];
+
+        boolean test = false;
+
+        if (firstPostionRow == lastPostionRow || firstPostionRow == lastPostionRow) {
+            test = true;
+        }
+
+
+    }
 }
+
